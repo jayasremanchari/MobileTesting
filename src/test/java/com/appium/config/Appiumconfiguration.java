@@ -12,7 +12,6 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeSuite;
 
 import com.appium.utils.StringUtils;
 
@@ -20,17 +19,15 @@ public class Appiumconfiguration {
 	final static Logger logger = Logger.getLogger(Appiumconfiguration.class);
 	static Properties properties;
 
-	private static AndroidDriver driver;
+	private AndroidDriver driver;
 
-	public static AndroidDriver getDriver() {
-		return driver;
-	}
 
-	@BeforeSuite
-	private void prepareAndroidForAppium() throws MalformedURLException {
-
+	public Appiumconfiguration() {
 		PropertyConfigurator.configure(StringUtils.LOG_PATH);
-		loadProperty();
+		loadProperties();
+	}
+	public AndroidDriver getAndroidDriver() throws MalformedURLException {
+
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", properties.get("deviceName"));
 		capabilities.setCapability("platformName",properties.get("platformName"));
@@ -38,20 +35,21 @@ public class Appiumconfiguration {
 		capabilities.setCapability("appPackage", properties.get("appPackage"));
 		capabilities.setCapability("appActivity", properties.get("appActivity"));
 		try {
-			if(driver!=null){
+
 			driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"),
 					capabilities);
-			}
+
 
 		} catch (MalformedURLException e) {
 
 			logger.error("Exception Caught while initiating driver", e);
 
 		}
+		return driver;
 
 	}
 
-	private static void loadProperty() {
+	private static void loadProperties() {
 		try {
 
 			FileInputStream file = new FileInputStream(StringUtils.PROP_PATH);
