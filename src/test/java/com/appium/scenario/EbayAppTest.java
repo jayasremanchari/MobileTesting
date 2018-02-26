@@ -16,6 +16,8 @@ import org.testng.annotations.Test;
 
 import com.appium.config.Appiumconfiguration;
 import com.appium.pages.LoginPage;
+import com.appium.pages.SearchByCategoryPage;
+import com.appium.utils.PageUtils;
 
 public class EbayAppTest  {
 
@@ -38,6 +40,7 @@ public class EbayAppTest  {
 		try {
 
 			loginTest();
+			searchCategoryTest();
 
 		}
 
@@ -65,10 +68,19 @@ public class EbayAppTest  {
 		stats = new LoginPage(driver).login();
 
 		if (stats != null)
-			assertEquals(stats.getText(), "fiya04");
+			assertEquals(stats.getText(), "jayasrmanchar_0");
 		logger.info("Page Logged in Successfully!!");
 
 	}
+
+	public void searchCategoryTest() {
+
+		PageUtils.previousPage();
+		WebElement stats = new SearchByCategoryPage(driver).searchCategory();
+		if(stats!=null)
+		assertEquals(stats.getText(), "Mobile Accessories");
+		logger.info("Category Selection completed..");
+}
 
 	@AfterClass
 	public void tearDown() {
