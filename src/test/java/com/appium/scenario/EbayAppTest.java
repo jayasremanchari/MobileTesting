@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.appium.config.Appiumconfiguration;
+import com.appium.pages.CategoryPage;
 import com.appium.pages.LoginPage;
 import com.appium.pages.SearchByCategoryPage;
 import com.appium.utils.PageUtils;
@@ -41,6 +42,7 @@ public class EbayAppTest  {
 
 			loginTest();
 			searchCategoryTest();
+			subCategorySelect();
 
 		}
 
@@ -80,6 +82,14 @@ public class EbayAppTest  {
 		if(stats!=null)
 		assertEquals(stats.getText(), "Mobile Accessories");
 		logger.info("Category Selection completed..");
+}
+	public void subCategorySelect() {
+
+		WebElement stats = new CategoryPage(driver).selectSubtegory();
+		if(stats!=null)
+		assertEquals(stats.getText(), "Mobile Gadgets");
+		logger.info("SubCategory Selection  Completed..");
+
 }
 
 	@AfterClass
