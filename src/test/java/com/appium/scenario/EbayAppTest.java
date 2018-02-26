@@ -15,7 +15,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.appium.config.Appiumconfiguration;
+import com.appium.pages.CategoryPage;
+import com.appium.pages.ItemPage;
 import com.appium.pages.LoginPage;
+import com.appium.pages.SearchByCategoryPage;
+import com.appium.utils.PageUtils;
 
 public class EbayAppTest  {
 
@@ -38,6 +42,9 @@ public class EbayAppTest  {
 		try {
 
 			loginTest();
+			searchCategoryTest();
+			subCategorySelect();
+			selectItem();
 
 		}
 
@@ -65,10 +72,35 @@ public class EbayAppTest  {
 		stats = new LoginPage(driver).login();
 
 		if (stats != null)
-			assertEquals(stats.getText(), "fiya04");
+			assertEquals(stats.getText(), "jayasrmanchar_0");
 		logger.info("Page Logged in Successfully!!");
 
 	}
+
+	public void searchCategoryTest() {
+
+		PageUtils.previousPage();
+		WebElement stats = new SearchByCategoryPage(driver).searchCategory();
+		if(stats!=null)
+		assertEquals(stats.getText(), "Mobile Accessories");
+		logger.info("Category Selection completed..");
+}
+	public void subCategorySelect() {
+
+		WebElement stats = new CategoryPage(driver).selectSubtegory();
+		if(stats!=null)
+		assertEquals(stats.getText(), "Mobile Gadgets");
+		logger.info("SubCategory Selection  Completed..");
+
+}
+
+	public void selectItem() {
+
+		new ItemPage(driver).selectItem();
+		logger.info("Item Purchased!! Done.");
+		logger.info("***********************");
+
+}
 
 	@AfterClass
 	public void tearDown() {
