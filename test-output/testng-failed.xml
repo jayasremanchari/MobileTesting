@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestNgParametersSuite]">
+  <test name="EbayAppTest(failed)">
+    <classes>
+      <class name="com.appium.scenario.EbayAppTest">
+        <methods>
+          <include name="EbayAppTestCase"/>
+          <include name="initDriver"/>
+        </methods>
+      </class> <!-- com.appium.scenario.EbayAppTest -->
+    </classes>
+  </test> <!-- EbayAppTest(failed) -->
+</suite> <!-- Failed suite [TestNgParametersSuite] -->
