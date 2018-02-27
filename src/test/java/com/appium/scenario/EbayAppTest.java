@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -37,14 +37,16 @@ public class EbayAppTest  {
 
 	}
 
-	@Test
+	@Test(priority = 0)
 	public void EbayAppSearchByCategoryTestCase()  {
 		try {
-
+			logger.info("Test Case Scenario1 [STARTED]-  SearchItemCategoryWise");
 			loginTest();
 			searchCategoryTest();
 			subCategorySelect();
 			purchaseItem();
+			logger.info("Test Case Scenario1 [COMPLETED]-  SearchItemCategoryWise");
+			logger.info("***********************");
 
 		}
 		catch (NoSuchElementException ex) {
@@ -66,12 +68,13 @@ public class EbayAppTest  {
 
 
 
-	@Test
+	@Test(dependsOnMethods = { "EbayAppSearchByCategoryTestCase" })
 	public void EbayAppSearchByTextInputTestCase() throws IOException {
-
-			searchByText();
+		logger.info("Test Case Scenario2 [STARTED]-  SearchItemByTextInput");
+		searchByText();
+		logger.info("Test Case Scenario2 [COMPLETED]-  SearchItemByTextInput");
+		logger.info("***********************");
 	}
-
 
 
 	private void searchByText() {
@@ -114,12 +117,12 @@ public class EbayAppTest  {
 	public void purchaseItem() {
 
 		new ItemPage(driver).selectItem();
-		logger.info("Item Purchased!! Done.");
-		logger.info("***********************");
+		logger.info("Item Purchased - Category-wise.");
+
 
 }
 
-	@AfterTest
+	@AfterSuite
 	public void tearDown() {
 
 		this.driver.quit();

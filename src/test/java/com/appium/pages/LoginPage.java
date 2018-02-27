@@ -24,8 +24,9 @@ public class LoginPage extends LoginUI {
 	public WebElement login() {
 
 		waitUntilVisible(homeNavigator);
-		if (elementExists(homeNavigator))
+		if (elementExists(homeNavigator)){
 			homeNavigator.click();
+		}
 		if (elementExists(signOutStatus))
 			signOutStatus.click();
 		if (elementExists(userNme) && elementExists(passwd)) {
@@ -35,9 +36,11 @@ public class LoginPage extends LoginUI {
 			passwd.sendKeys(ExcelUtils.getCellValue(1, 1));
 		}
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		if (elementExists(signInOk))
+		if (elementExists(signInOk)){
 			signInOk.click();
+		}
 		waitUntilVisible(remember);
+		testPage.takeScreenShot(driver, StringUtils.LOGIN_TESTCASE);
 		if (elementExists(remember))
 			remember.click();
 		waitUntilVisible(homeNavigator);
