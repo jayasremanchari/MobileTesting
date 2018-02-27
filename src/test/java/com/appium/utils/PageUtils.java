@@ -66,7 +66,8 @@ public class PageUtils {
 
 	 public static void previousPage() {
 
-			driver.pressKeyCode(AndroidKeyCode.BACK);
+			((AndroidDriver)driver).pressKeyCode(AndroidKeyCode.BACK);
+
 
 		}
 	 protected void swipe(WebElement element){
