@@ -86,12 +86,16 @@ This Test case is to search and purchase an item with a search input provided in
 
 To view the Test results please Browse to the below paths
 
-###Report
+
+
+
+### Report
+
 1.test-output/index.html
 2.test-output/emailable-report
 3.test-output/TestNgParametersSuite/EbayAppTest
 
-###Screenshots : src/test/resources/output/screenshots/*
+### Screenshots : src/test/resources/output/screenshots/*
 
 
 
