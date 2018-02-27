@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.appium.locators.ItemUI;
+import com.appium.utils.StringUtils;
 
 public class ItemPage extends ItemUI {
 
@@ -23,14 +24,17 @@ public class ItemPage extends ItemUI {
 	}
 
 	private void buy() {
-		if (elementExists(buy))
+		if (elementExists(buy)){
+			testPage.takeScreenShot(driver, StringUtils.PURCHASE_BY_CATEGORY_TESTCASE);
 			buy.click();
+		}
 
 	}
 
 	private void viewItemImages() {
-
+		testPage.takeScreenShot(driver, StringUtils.PURCHASE_BY_CATEGORY_TESTCASE);
 		swipe(image);
+
 
 	}
 
