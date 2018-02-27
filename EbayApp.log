@@ -1,0 +1,15 @@
+2018-Feb-27 11:43:22  - Test Case Scenario1 [STARTED]-  SearchItemCategoryWise
+2018-Feb-27 11:44:10  - Page Logged in Successfully!!
+2018-Feb-27 11:44:33  - Category Selection completed..
+2018-Feb-27 11:44:45  - SubCategory Selection  Completed..
+2018-Feb-27 11:45:03  - Item Purchased - Category-wise.
+2018-Feb-27 11:45:03  - Test Case Scenario1 [COMPLETED]-  SearchItemCategoryWise
+2018-Feb-27 11:45:03  - ***********************
+2018-Feb-27 11:45:03  - Test Case Scenario2 [STARTED]-  SearchItemByTextInput
+2018-Feb-27 11:45:08  - Navigated Back To Home Button..
+2018-Feb-27 11:45:20  - Input Provided in SearchText Box..
+2018-Feb-27 11:45:23  - Item Selected..
+2018-Feb-27 11:45:26  - Item Purchased - BySearch TextInput!!
+2018-Feb-27 11:45:29  - Test Case Scenario2 [COMPLETED]-  SearchItemByTextInput
+2018-Feb-27 11:45:29  - ***********************
+
