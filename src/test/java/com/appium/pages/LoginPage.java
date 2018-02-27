@@ -11,16 +11,35 @@ import com.appium.locators.LoginUI;
 import com.appium.utils.ExcelUtils;
 import com.appium.utils.StringUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoginPage.
+ */
 public class LoginPage extends LoginUI {
 
 
 
+	/**
+	 * Instantiates a new login page.
+	 *
+	 * @param driver the driver
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public LoginPage(AndroidDriver driver) throws IOException {
 		super(driver);
 		loadData();
 
 	}
 
+	/**
+	 * Login.
+	 *
+	 * @return the web element
+	 * The method navigates to the home navigator
+	 * Checks for signIn status
+	 * Sign in with user name and password fetched from an Excel input.
+	 * Click Remember for the prompt to save the user credentials given.
+	 */
 	public WebElement login() {
 
 		waitUntilVisible(homeNavigator);
@@ -53,6 +72,12 @@ public class LoginPage extends LoginUI {
 
 	}
 
+	/**
+	 * Load data.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * The method loads the test input from an external Excel input sheet.
+	 */
 	private void loadData() throws IOException {
 		ExcelUtils.loadExcelData(StringUtils.LOGIN_TEST_DATA_PATH,
 				StringUtils.LOGIN_TEST_DATA_SHEET_NAME);

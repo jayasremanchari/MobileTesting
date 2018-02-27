@@ -78,5 +78,13 @@ public class ItemUI extends PageUtils {
 	protected String showMore ="\"Show more\"";
 
 
+	/** The searchcontainer. */
+	protected String searchcontainer= "\"com.ebay.mobile:id/top_scrollview_content\"";
+
+
+	/** The item. */
+	protected String buyItem ="\"Buy It Now\"";
+
+
 
 }

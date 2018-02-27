@@ -10,14 +10,33 @@ import org.openqa.selenium.WebElement;
 import com.appium.locators.SearchUI;
 import com.appium.utils.StringUtils;
 
+
+/**
+ * The Class SearchPage.
+ */
 public class SearchPage extends SearchUI {
 
 
+	/** The Constant logger. */
 	final static Logger logger = Logger.getLogger(SearchPage.class);
-	 public SearchPage(AndroidDriver driver) {
+
+ 	/**
+ 	 * Instantiates a new search page.
+ 	 *
+ 	 * @param driver the driver
+ 	 */
+ 	public SearchPage(AndroidDriver driver) {
 		super(driver);
 	}
 
+	/**
+	 * Search by category.
+	 *
+	 * @return the mobile element
+	 * The method searches an item through its category (Here "MobileAccessories")
+	 * Categories tab is clicked.
+	 * Scroll through the page until Mobile Accessories is found and the select.
+	 */
 	public MobileElement searchByCategory() {
 
 		 waitUntilVisible(categories);
@@ -36,7 +55,17 @@ public class SearchPage extends SearchUI {
 
 	}
 
-	public WebElement searchByText() throws NoSuchElementException {
+	/**
+	 * Search by text.
+	 *
+	 * @return the web element
+	 * @throws NoSuchElementException the no such element exception
+	 * The method searches an item through the search input provided in the search text box.
+	 * Click on home navigator and go to Home page.
+	 * In the search text box field, item to be searched is given as input. (Here "Smart Wrist Watch")
+	 *
+	 */
+	public void searchByText() throws NoSuchElementException {
 
 		if (elementExists(homeNavigator))
 			homeNavigator.click();
@@ -53,19 +82,8 @@ public class SearchPage extends SearchUI {
 			logger.info("Input Provided in SearchText Box..");
 			testPage.takeScreenShot(driver,
 					StringUtils.SEARCH_BY_TEXTINPUT_TESTCASE);
-			waitUntilVisible(itemId);
-			itemId.click();
-			logger.info("Item Selected..");
-			testPage.takeScreenShot(driver,
-					StringUtils.PURCHASE_BY_TEXTINPUT_TESTCASE);
-			MobileElement scrollElement = scrollToElement(searchcontainer, item);
-			if (elementExists(scrollElement))
-				scrollElement.click();
 		}
-		logger.info("Item Purchased - BySearch TextInput!!");
-		testPage.takeScreenShot(driver,
-				StringUtils.PURCHASE_BY_TEXTINPUT_TESTCASE);
-		return null;
+
 	}
 
 

@@ -45,15 +45,6 @@ public class SearchUI extends PageUtils {
 	/** The element. */
 	protected String element ="\"Mobile Accessories\"";
 
-	/** The searchcontainer. */
-	protected String searchcontainer= "\"com.ebay.mobile:id/top_scrollview_content\"";
-
-	/** The item. */
-	protected String item ="\"Buy It Now\"";
-
-	/** The item id. */
-	@FindBy(xpath= "//android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[@index='2']")
-	protected WebElement itemId;
 
 	/** The home navigator. */
 	@FindBy(id = "com.ebay.mobile:id/home")
