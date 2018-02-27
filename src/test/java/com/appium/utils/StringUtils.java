@@ -7,5 +7,7 @@ public class StringUtils {
 	public final static String LOGIN_TEST_DATA_PATH = "src/test/resources/testdata/TestData.xlsx";
 	public final static String LOGIN_TEST_DATA_SHEET_NAME= "Sheet1";
 
+	public final static String SEARCH_TEXT= "Smart Wrist Watch";
+
 
 }

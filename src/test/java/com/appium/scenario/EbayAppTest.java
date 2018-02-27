@@ -8,9 +8,9 @@ import java.net.MalformedURLException;
 import java.util.NoSuchElementException;
 
 import org.apache.log4j.Logger;
-import org.junit.AfterClass;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -18,7 +18,7 @@ import com.appium.config.Appiumconfiguration;
 import com.appium.pages.CategoryPage;
 import com.appium.pages.ItemPage;
 import com.appium.pages.LoginPage;
-import com.appium.pages.SearchByCategoryPage;
+import com.appium.pages.SearchPage;
 import com.appium.utils.PageUtils;
 
 public class EbayAppTest  {
@@ -38,16 +38,15 @@ public class EbayAppTest  {
 	}
 
 	@Test
-	public void EbayAppTestCase()  {
+	public void EbayAppSearchByCategoryTestCase()  {
 		try {
 
 			loginTest();
 			searchCategoryTest();
 			subCategorySelect();
-			selectItem();
+			purchaseItem();
 
 		}
-
 		catch (NoSuchElementException ex) {
 
 			logger.info("NoSuchElementException Caught in TestCase!"
@@ -65,6 +64,22 @@ public class EbayAppTest  {
 
 	}
 
+
+
+	@Test
+	public void EbayAppSearchByTextInputTestCase() throws IOException {
+
+			searchByText();
+	}
+
+
+
+	private void searchByText() {
+
+
+		new SearchPage(driver).searchByText();
+	}
+
 	public void loginTest() throws IOException  {
 
 		WebElement stats = null;
@@ -77,10 +92,11 @@ public class EbayAppTest  {
 
 	}
 
-	public void searchCategoryTest() {
+
+		public void searchCategoryTest() {
 
 		PageUtils.previousPage();
-		WebElement stats = new SearchByCategoryPage(driver).searchCategory();
+		WebElement stats = new SearchPage(driver).searchByCategory();
 		if(stats!=null)
 		assertEquals(stats.getText(), "Mobile Accessories");
 		logger.info("Category Selection completed..");
@@ -94,7 +110,7 @@ public class EbayAppTest  {
 
 }
 
-	public void selectItem() {
+	public void purchaseItem() {
 
 		new ItemPage(driver).selectItem();
 		logger.info("Item Purchased!! Done.");
@@ -102,9 +118,11 @@ public class EbayAppTest  {
 
 }
 
-	@AfterClass
+	@AfterTest
 	public void tearDown() {
 
 		this.driver.quit();
+
+
 	}
 }

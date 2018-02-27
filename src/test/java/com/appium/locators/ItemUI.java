@@ -47,8 +47,6 @@ public class ItemUI extends PageUtils {
 
 	protected String color = "\"Colour\"";
 	protected String black = "\"Black\"";
-	protected String brand = "\"Brand\"";
-	protected String brandName = "\"Apple\"";
 	protected String item = "\"Smart Wrist Watch\"";
 
 	protected String resouce= "\"com.ebay.mobile:id/search_refine_fragment\"";

@@ -30,8 +30,11 @@ public class SearchUI extends PageUtils {
 	protected String resouce= "\"com.ebay.mobile:id/channel_content\"";
 	protected String element ="\"Mobile Accessories\"";
 
-	protected String searchcontainer= "\"com.ebay.mobile:id/fragmentContainer\"";
-	protected String item ="\"Waterproof\"";
+	protected String searchcontainer= "\"com.ebay.mobile:id/top_scrollview_content\"";
+	protected String item ="\"Buy It Now\"";
+
+	@FindBy(xpath= "//android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[@index='2']")
+	protected WebElement itemId;
 
 
 

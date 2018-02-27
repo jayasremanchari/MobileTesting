@@ -16,7 +16,6 @@ public class ItemPage extends ItemUI {
 	public void selectItem() {
 
 		findElementByText(item).click();
-		applyFilter();
 		if (elementExists(itemId))
 			itemId.click();
 		viewItemImages();
@@ -38,8 +37,10 @@ public class ItemPage extends ItemUI {
 	private void applyFilter() {
 		if (elementExists(filter))
 			filter.click();
-		findElementByText(color).click();
-		findElementByText(black).click();
+		if(elementExists(findElementByText(color)))
+				findElementByText(color).click();
+		if(elementExists(findElementByText(black)))
+			findElementByText(black).click();
 		done();
 	}
 
