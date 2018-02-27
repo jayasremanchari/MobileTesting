@@ -1,6 +1,6 @@
 # eBay Mobile Testing with Appium
 
-This is an Appium Project to test the given Android apk of 'eBay' Application for the Scenario - "Login to Ebay Mobile Application,search
+This is an Appium Project to test the given Android apk of 'eBay App' for the Scenario - "Login to Ebay Mobile Application,search
 for an item,add to cart and purchase it"
 
 Test Coverage :
@@ -55,31 +55,30 @@ Option 2
 
 Go to Project root folder and invoke the command : mvn test
 
-### Break down into end to end tests
 
-To  test script for Android apk of 'eBay' Application.
 
-### And coding style tests
+### Test Case Scenarios
 
-Explain what these tests test and why
 
-1.SearchItemCategoryWise
+
+####SearchItemCategoryWise
 The test case is to search an item category wise .
 This is done in order to extensively make use of all Appium touch actions/gestures.
 
---The test case first logs into the mobile app with a valid credentials and selects the Category "Mobile Accessories" through vertical Scroll.
---Under the selected category , the test case selects a sub category "Mobile Gadgets" and "Smart Wrist Watch" under the sub category.
---From the list of result items the first one is selected.
---Following this the item image is swiped using Horizontal Swipe and purchased by clicking "Buy it Now" Option.
+1.The test case first logs into the mobile app with a valid credentials and selects the Category "Mobile Accessories" through vertical Scroll.
+2.Under the selected category , the test case selects a sub category "Mobile Gadgets" and "Smart Wrist Watch" under the sub category.
+3.From the list of result items the first one is selected.
+4.Following this the item image is swiped using Horizontal Swipe and purchased by clicking "Buy it Now" Option.
 
 
-2.SearchItemByTextInput
+####SearchItemByTextInput
 
---This Test case is to search and purchase an item with a search input provided in the search text box provided in the home page.
---The Test case first navigates to the home navigator and selects the home button.
---The item to be searched is the entered in the text box field on the page as "Smart Wrist Watch"
---From the list of result items the first one is selected.
---Following this the item is purchased by clicking on the "Buy It Now" Option Present.
+This Test case is to search and purchase an item with a search input provided in the search text box provided in the home page.
+
+1.The Test case first navigates to the home navigator and selects the home button.
+2.The item to be searched is the entered in the text box field on the page as "Smart Wrist Watch"
+3.From the list of result items the first one is selected.
+4.Following this the item is purchased by clicking on the "Buy It Now" Option Present.
 
 
 
@@ -87,11 +86,12 @@ This is done in order to extensively make use of all Appium touch actions/gestur
 
 To view the Test results please Browse to the below paths
 
-Report 		:test-output/index.html
-			:test-output/emailable-report
-			:test-output/TestNgParametersSuite/EbayAppTest
+###Report
+1.test-output/index.html
+2.test-output/emailable-report
+3.test-output/TestNgParametersSuite/EbayAppTest
 
-Screenshots :src/test/resources/output/screenshots/*
+###Screenshots : src/test/resources/output/screenshots/*
 
 
 
