@@ -15,17 +15,41 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.appium.utils.StringUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Appiumconfiguration.
+ */
 public class Appiumconfiguration {
+
+	/** The Constant logger. */
 	final static Logger logger = Logger.getLogger(Appiumconfiguration.class);
+
+	/** The properties. */
 	static Properties properties;
 
+	/** The driver. */
 	private AndroidDriver driver;
 
 
+	/**
+	 * Instantiates a new appiumconfiguration.
+	 */
 	public Appiumconfiguration() {
 		PropertyConfigurator.configure(StringUtils.LOG_PATH);
 		loadProperties();
 	}
+
+	/**
+	 * Gets the android driver.
+	 *
+	 * @return the android driver
+	 * @throws MalformedURLException the malformed url exception
+	 *
+	 * The method sets the device properties to the appium driver in
+	 * order to establish a session between the Appium server and
+	 * the client.
+	 *
+	 */
 	public AndroidDriver getAndroidDriver() throws MalformedURLException {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -49,6 +73,11 @@ public class Appiumconfiguration {
 
 	}
 
+	/**
+	 * Load properties.
+	 *
+	 * The method loads the properties of the device to be tested from an external property file .
+	 */
 	private static void loadProperties() {
 		try {
 
