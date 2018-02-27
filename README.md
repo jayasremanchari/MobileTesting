@@ -1,4 +1,4 @@
-# eBay Mobile Testing with Appium
+# eBayApp Mobile Testing with Appium
 
 This is an Appium Project to test the given Android apk of 'eBay App' for the Scenario - "Login to Ebay Mobile Application,search
 for an item,add to cart and purchase it"
@@ -38,14 +38,14 @@ This application works in Page Object Model fashion  and effectively makes use o
 Install the above prerequisites
 Clone the code from the repo and import it as an eclipse project
 
-## Configurations
+### Configurations
 
 1. Enable Developer options in your android Device with USB debugging enabled.
 2. Change the configuration under resource/package/scenarios folder scenario.xml according to your Android Device.
 Note: To know your device name you need to run the ADB devices command in command prompt.
 3. Change the user name and password  resource/testdata TestData.xlsx and provide the login details for ebay app.
 
-## Running the Tests
+### Running the Tests
 
 Option 1
 
@@ -57,11 +57,11 @@ Go to Project root folder and invoke the command : mvn test
 
 
 
-## Test Case Scenarios
+### Test Case Scenarios
 
 
 
-#### SearchItemCategoryWise
+#### Search Item By Category
 The test case is to search an item category wise .
 This is done in order to extensively make use of all Appium touch actions/gestures.
 
@@ -71,7 +71,7 @@ This is done in order to extensively make use of all Appium touch actions/gestur
 	* Following this the item image is swiped using Horizontal Swipe and purchased by clicking "Buy it Now" Option.
 
 
-#### SearchItemByTextInput
+#### Search Item
 
 This Test case is to search and purchase an item with a search input provided in the search text box provided in the home page.
 
@@ -82,7 +82,7 @@ This Test case is to search and purchase an item with a search input provided in
 
 
 
-## Test Results
+### Test Results
 
 To view the Test results please Browse to the below paths
 
@@ -96,7 +96,9 @@ To view the Test results please Browse to the below paths
 3. test-output/TestNgParametersSuite/EbayAppTest
 
 
-### Screenshots : src/test/resources/output/screenshots/*
+### Screenshots
+
+1. src/test/resources/output/screenshots/*
 
 
 
