@@ -3,22 +3,22 @@
 This is an Appium Project to test the given Android apk of 'eBay App' for the Scenario - "Login to Ebay Mobile Application,search
 for an item,add to cart and purchase it"
 
-Test Coverage :
-1 : SearchItemCategoryWise
-2 : SearchItemByTextInput
+### Test Coverage :
+1. SearchItemCategoryWise
+2. SearchItemByTextInput
 
 This application works in Page Object Model fashion  and effectively makes use of the below Appium Functions to test the above scenarios
 
-1.Click()
-2.WebDriverWait()
-3.isDisplayed()
-4.implicitlyWait()
-5.findElement()
-6.AndroidUIAutomator()
-7.UiScrollable()
-8.UiSelector()
-9.scrollIntoView()
-10.TouchAction()
+1. Click
+2. Wait
+3. isDisplayed
+4. implicitlyWait
+5. findElement
+6. AndroidUIAutomator
+7. UiScrollable
+8. UiSelector
+9. scrollIntoView
+10. TouchAction
 
 
 ### Prerequisites
@@ -89,9 +89,11 @@ To view the Test results please Browse to the below paths
 
 
 
-### Report  :test-output/index.html
-### 		:test-output/emailable-report
-###			:test-output/TestNgParametersSuite/EbayAppTest
+### Report
+
+1. test-output/index.html
+2. test-output/emailable-report
+3. test-output/TestNgParametersSuite/EbayAppTest
 
 
 ### Screenshots : src/test/resources/output/screenshots/*
