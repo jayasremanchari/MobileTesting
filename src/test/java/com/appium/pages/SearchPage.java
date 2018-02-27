@@ -35,9 +35,11 @@ public class SearchPage extends SearchUI {
 	public WebElement searchByText() throws NoSuchElementException {
 
 
-		for(int i =0;i<7;i++){
-			PageUtils.back();
-		}
+
+		if (elementExists(homeNavigator))
+			homeNavigator.click();
+				if (elementExists(home))
+			home.click();
 
 		if(elementExists(search))
 		search.clear();

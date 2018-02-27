@@ -76,9 +76,10 @@ public class EbayAppTest  {
 
 	private void searchByText() {
 
-
 		new SearchPage(driver).searchByText();
 	}
+
+
 
 	public void loginTest() throws IOException  {
 

@@ -36,6 +36,13 @@ public class SearchUI extends PageUtils {
 	@FindBy(xpath= "//android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[@index='2']")
 	protected WebElement itemId;
 
+	@FindBy(id = "com.ebay.mobile:id/home")
+	protected WebElement homeNavigator;
+
+	@FindBy(id = "com.ebay.mobile:id/menuitem_home")
+	protected WebElement home;
+
+
 
 
 
