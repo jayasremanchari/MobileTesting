@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestNgParametersSuite" parallel="false">
+	<test name="EbayAppTest">
+		<classes>
+		<class name = "com.appium.scenario.EbayAppTest"/>
+		</classes>
+	</test>
+</suite>
