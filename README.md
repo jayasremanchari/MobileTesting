@@ -57,28 +57,28 @@ Go to Project root folder and invoke the command : mvn test
 
 
 
-### Test Case Scenarios
+## Test Case Scenarios
 
 
 
-####SearchItemCategoryWise
+#### SearchItemCategoryWise
 The test case is to search an item category wise .
 This is done in order to extensively make use of all Appium touch actions/gestures.
 
-1.The test case first logs into the mobile app with a valid credentials and selects the Category "Mobile Accessories" through vertical Scroll.
-2.Under the selected category , the test case selects a sub category "Mobile Gadgets" and "Smart Wrist Watch" under the sub category.
-3.From the list of result items the first one is selected.
-4.Following this the item image is swiped using Horizontal Swipe and purchased by clicking "Buy it Now" Option.
+	* The test case first logs into the mobile app with a valid credentials and selects the Category "Mobile Accessories" through vertical Scroll.
+	* Under the selected category , the test case selects a sub category "Mobile Gadgets" and "Smart Wrist Watch" under the sub category.
+	* From the list of result items the first one is selected.
+	* Following this the item image is swiped using Horizontal Swipe and purchased by clicking "Buy it Now" Option.
 
 
-####SearchItemByTextInput
+#### SearchItemByTextInput
 
 This Test case is to search and purchase an item with a search input provided in the search text box provided in the home page.
 
-1.The Test case first navigates to the home navigator and selects the home button.
-2.The item to be searched is the entered in the text box field on the page as "Smart Wrist Watch"
-3.From the list of result items the first one is selected.
-4.Following this the item is purchased by clicking on the "Buy It Now" Option Present.
+	* The Test case first navigates to the home navigator and selects the home button.
+	* The item to be searched is the entered in the text box field on the page as "Smart Wrist Watch"
+	* From the list of result items the first one is selected.
+	* Following this the item is purchased by clicking on the "Buy It Now" Option Present.
 
 
 
@@ -89,11 +89,10 @@ To view the Test results please Browse to the below paths
 
 
 
-### Report
+### Report  :test-output/index.html
+### 		:test-output/emailable-report
+###			:test-output/TestNgParametersSuite/EbayAppTest
 
-1.test-output/index.html
-2.test-output/emailable-report
-3.test-output/TestNgParametersSuite/EbayAppTest
 
 ### Screenshots : src/test/resources/output/screenshots/*
 
